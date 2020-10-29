@@ -92,7 +92,7 @@ public class DemoConfig {
     }
 
     @Bean
-    @Autowired
+//    @Autowired
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(sessionFactory);

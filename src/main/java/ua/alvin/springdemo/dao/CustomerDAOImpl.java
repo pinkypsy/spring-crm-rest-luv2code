@@ -34,13 +34,10 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public void saveCustomer(Customer customer) {
-        System.out.println(3);
 
         Session session = sessionFactory.getCurrentSession();
         //save if there is no customer with such id, update otherwise
         session.saveOrUpdate(customer);
-
-        System.out.println(3);
 
     }
 

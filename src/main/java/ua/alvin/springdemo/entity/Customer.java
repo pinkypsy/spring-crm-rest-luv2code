@@ -1,10 +1,13 @@
 package ua.alvin.springdemo.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "customer")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Customer {
 
     @Id
@@ -23,8 +26,8 @@ public class Customer {
 
  /*   @Transient
     private ArrayList<String> orderByOptions;*/
-    @Transient
-    private String orderBy;
+//    @Transient
+//    private String orderBy;
 
     @Override
     public String toString() {
@@ -75,14 +78,6 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getOrderBy() {
-        return orderBy;
-    }
-
-    public void setOrderBy(String orderBy) {
-        this.orderBy = orderBy;
     }
 
   /*  public ArrayList<String> getOrderByOptions() {

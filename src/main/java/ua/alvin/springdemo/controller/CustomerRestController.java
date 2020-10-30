@@ -14,7 +14,6 @@ public class CustomerRestController {
 
     @Autowired
     private CustomerService customerService;
-//    private List<Customer> customers;
 
     @GetMapping("/customers")
     public List<Customer> getCustomers(){
@@ -23,7 +22,7 @@ public class CustomerRestController {
     }
 
     @GetMapping("/customers/{customerId}")
-    public Customer getCustomers(@PathVariable int customerId){
+    public Customer getCustomer(@PathVariable int customerId){
 
         Customer customer = customerService.getCustomer(customerId);
 

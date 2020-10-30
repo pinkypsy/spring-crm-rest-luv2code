@@ -32,15 +32,16 @@ public class DemoConfig {
 
     private Logger logger = Logger.getLogger(getClass().getName());
 
-    @Bean
-    public ViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-
-        viewResolver.setPrefix("/WEB-INF/view/");
-        viewResolver.setSuffix(".jsp");
-
-        return viewResolver;
-    }
+    //no views in the project
+//    @Bean
+//    public ViewResolver viewResolver() {
+//        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+//
+//        viewResolver.setPrefix("/WEB-INF/view/");
+//        viewResolver.setSuffix(".jsp");
+//
+//        return viewResolver;
+//    }
 
 
     @Bean
@@ -92,7 +93,7 @@ public class DemoConfig {
     }
 
     @Bean
-//    @Autowired
+    @Autowired
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(sessionFactory);
